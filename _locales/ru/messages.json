@@ -1,0 +1,54 @@
+{
+  "manifest_name": {
+    "message": "Tab Volume",
+    "description": "please leave as is, in English"
+  },
+  "manifest_description": {
+    "message": "Регулировка громкости на вкладке браузера"
+  },
+  "manifest_commands_volume_up": {
+    "message": "Увеличить громкость"
+  },
+  "manifest_commands_volume_down": {
+    "message": "Уменьшить громкость"
+  },
+
+  "background_offscreen_justification": {
+    "message": "Запуск обработчика фонового звука, который записывает аудиопоток для обработки изменений громкости"
+  },
+
+  "app_title": {
+    "message": "Tab Volume",
+    "description": "please leave as is, in English"
+  },
+  "app_reset_button": {
+    "message": "Восстановить"
+  },
+  "app_settings_max_label": {
+    "message": "Максимальная"
+  },
+  "app_settings_badge_toggle_label": {
+    "message": "Показывать громкость на значке расширения"
+  },
+  "app_settings_restore_button": {
+    "message": "Восстановить настройки"
+  },
+  "app_settings_about_link": {
+    "message": "О расширении"
+  },
+  "app_settings_about_contribute_part_1": {
+    "message": "Это расширение полностью бесплатное и с открытым исходным кодом, код доступен на"
+  },
+  "app_settings_about_contribute_part_2": {
+    "message": "Если вы хотите внести свой вклад, не стесняйтесь сделать это."
+  },
+  "app_settings_about_email_to": {
+    "message": "Вы можете написать мне на wokalek@wokalek.ru, если у вас есть какие-либо вопросы."
+  },
+  "app_settings_about_support_part_1": {
+    "message": "Если вы хотите поблагодарить меня за это расширение, вы можете сделать это через"
+  },
+  "app_settings_about_support_part_2": {
+    "message": "Спасибо!"
+  }
+}

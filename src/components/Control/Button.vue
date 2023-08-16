@@ -1,0 +1,25 @@
+<template>
+  <button
+    type="button"
+    class="
+      w-full
+      py-2.5
+      px-5
+      rounded-full
+      border
+      outline-none
+      bg-white
+      border-slate-200
+      enabled:hover:bg-slate-50
+      ring-blue-500
+      disabled:text-slate-400
+      focus-visible:ring-2
+      transition-all
+      duration-100
+    "
+  >
+    <span class="font-sans font-medium text-sm">
+      <slot>Button</slot>
+    </span>
+  </button>
+</template>

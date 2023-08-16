@@ -1,0 +1,54 @@
+{
+  "manifest_name": {
+    "message": "Tab Volume",
+    "description": "Manifest name field [please leave as is, in English]"
+  },
+  "manifest_description": {
+    "message": "Volume control within a browser tab"
+  },
+  "manifest_commands_volume_up": {
+    "message": "Increase volume"
+  },
+  "manifest_commands_volume_down": {
+    "message": "Decrease volume"
+  },
+
+  "background_offscreen_justification": {
+    "message": "Running a background audio handler that records an audio stream to handle volume changes"
+  },
+
+  "app_title": {
+    "message": "Tab Volume",
+    "description": "please leave as is, in English"
+  },
+  "app_reset_button": {
+    "message": "Restore"
+  },
+  "app_settings_max_label": {
+    "message": "Max"
+  },
+  "app_settings_badge_toggle_label": {
+    "message": "Show volume on extension icon"
+  },
+  "app_settings_restore_button": {
+    "message": "Restore settings"
+  },
+  "app_settings_about_link": {
+    "message": "About extension"
+  },
+  "app_settings_about_contribute_part_1": {
+    "message": "This extension is completely free and open source, the code is available on"
+  },
+  "app_settings_about_contribute_part_2": {
+    "message": "If you'd like to contribute, feel free to do so."
+  },
+  "app_settings_about_email_to": {
+    "message": "You can email me at wokalek@wokalek.ru if you have any questions."
+  },
+  "app_settings_about_support_part_1": {
+    "message": "If you want to thank me for this extension, you can do it through"
+  },
+  "app_settings_about_support_part_2": {
+    "message": "Thank you!"
+  }
+}
