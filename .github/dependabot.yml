@@ -1,0 +1,14 @@
+version: 2
+
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      timezone: Europe/Moscow
+      interval: weekly
+      day: saturday
+      time: "08:00"
+    groups:
+      dev-dependencies:
+        patterns:
+          - "*"
