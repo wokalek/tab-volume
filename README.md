@@ -10,6 +10,7 @@ A convenient and eye-pleasing extension for controlling the sound volume in a br
 - 🍥 Set any upper limit for audio volume scaling
 - 🍣 List of tabs on which you have changed the volume for easy switching between them
 - 🍤 Restore tab volume with one click
+- 🍢 Change volume with hotkeys `Ctrl + Shift + ArrowUp/ArrowDown`
 
 ## Contribution
 
