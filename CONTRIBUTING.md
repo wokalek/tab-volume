@@ -10,6 +10,8 @@ Please see the list below to better understand the structure of this repository:
 - 🛍️ [pnpm](https://pnpm.io) as a package manager
 - ✏️ [ESLint](https://typescript-eslint.io) for linting
 
+Please use the [Conventional Commits](https://www.conventionalcommits.org/) to formalize your commits!
+
 ## Localization
 
 If you want to add localizations to the extension, they are located in the [`_locales`](_locales) folder. Just create a folder with your locale and translate language phrases.
