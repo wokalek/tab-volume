@@ -25,7 +25,7 @@
     "message": "Restore"
   },
   "app_settings_max_label": {
-    "message": "Max"
+    "message": "Maximum"
   },
   "app_settings_badge_toggle_label": {
     "message": "Show volume on extension icon"
