@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./src/public/favicons/128.png" />
+  <img src="./webstore/images/promo/marquee.png" />
 </p>
 
 # Tab Volume 🎧
