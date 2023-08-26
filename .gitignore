@@ -1,7 +1,6 @@
 # Dev and build
 node_modules
-dist
-dist.zip
+dist*
 
 # Auto importing components for Vue
 components.d.ts
