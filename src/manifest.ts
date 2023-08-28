@@ -11,7 +11,6 @@ export default defineManifest(() => ({
   minimum_chrome_version: '116',
   icons: { 16: 'favicons/16.png', 32: 'favicons/32.png', 48: 'favicons/48.png', 128: 'favicons/128.png' },
   permissions: [
-    'tabs',
     'activeTab',
     'tabCapture',
     'offscreen',
