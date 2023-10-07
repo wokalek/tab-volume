@@ -25,7 +25,7 @@
     "@types/lodash": "^4.14.198",
     "@typescript-eslint/eslint-plugin": "^6.7.0",
     "@typescript-eslint/parser": "^6.7.0",
-    "@vitejs/plugin-vue": "^4.3.4",
+    "@vitejs/plugin-vue": "^4.4.0",
     "autoprefixer": "^10.4.15",
     "chrome-types": "^0.1.231",
     "eslint": "^8.49.0",
