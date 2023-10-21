@@ -35,8 +35,8 @@ devDependencies:
     specifier: ^10.4.15
     version: 10.4.15(postcss@8.4.29)
   chrome-types:
-    specifier: ^0.1.231
-    version: 0.1.231
+    specifier: ^0.1.233
+    version: 0.1.233
   eslint:
     specifier: ^8.49.0
     version: 8.49.0
@@ -1281,8 +1281,8 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /chrome-types@0.1.231:
-    resolution: {integrity: sha512-h3bavs+tROAeGE2pLJckJNQzFU5HN2yYEKEG+2byq1+MWrycBYxklCl6gRaI3Jjeyn1DzTTrFToOvdRCQfc/kg==}
+  /chrome-types@0.1.233:
+    resolution: {integrity: sha512-hYt3EEREyammb84b8L8tmr81viacB01/6o/Aw7fwuzFi+jPHzbGDG2+NYAkgeFg0RVW4iq7+hAo8HXc+TAr4MA==}
     dev: true
 
   /clean-css@5.3.2:
