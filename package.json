@@ -18,7 +18,7 @@
   "dependencies": {
     "lodash": "^4.17.21",
     "perfect-debounce": "^1.0.0",
-    "vue": "^3.3.4"
+    "vue": "^3.3.6"
   },
   "devDependencies": {
     "@crxjs/vite-plugin": "^1.0.14",
