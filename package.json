@@ -40,6 +40,6 @@
     "unplugin-vue-components": "^0.25.2",
     "vite": "^4.4.9",
     "vite-plugin-minify": "^1.5.2",
-    "vite-svg-loader": "^4.0.0"
+    "vite-svg-loader": "^5.0.1"
   }
 }
