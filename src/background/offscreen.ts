@@ -1,6 +1,6 @@
 import { debounce } from 'perfect-debounce'
 
-import { runtimeOnMessage } from 'utils/chrome/runtime.ts'
+import { runtimeOnMessage } from '@/utils/chrome/runtime.ts'
 
 const contextByStreamIdMap = new Map<string, AudioContext>()
 const gainNodeByStreamIdMap = new Map<string, GainNode>()

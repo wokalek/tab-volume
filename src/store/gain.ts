@@ -1,6 +1,6 @@
-import { StorageNamespaceEnum } from 'enums/storage.ts'
-import { StorageAreaEnum, getStorage, getStorageItem, setStorageItem, storageOnChanged } from 'utils/chrome/storage.ts'
-import { processCurrentTab } from 'utils/chrome/tabs.ts'
+import { StorageNamespaceEnum } from '@/enums/storage.ts'
+import { StorageAreaEnum, getStorage, getStorageItem, setStorageItem, storageOnChanged } from '@/utils/chrome/storage.ts'
+import { processCurrentTab } from '@/utils/chrome/tabs.ts'
 
 export function getGain () {
   return processCurrentTab((tabId) => {

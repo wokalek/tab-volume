@@ -17,8 +17,8 @@
 </template>
 
 <script setup lang="ts">
-import IconSettings from 'assets/icons/settings.svg?component'
+import IconSettings from '@/assets/icons/settings.svg?component'
 
-import { view, ViewEnum, toggleStoreView } from 'store/view.ts'
-import { loc } from 'utils/chrome/i18n.ts'
+import { view, ViewEnum, toggleStoreView } from '@/store/view.ts'
+import { loc } from '@/utils/chrome/i18n.ts'
 </script>

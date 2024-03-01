@@ -11,9 +11,9 @@ import { computed } from 'vue'
 
 import { round } from 'lodash'
 
-import useGain from 'composables/useGain.ts'
-import { setGain } from 'store/gain.ts'
-import { loc } from 'utils/chrome/i18n.ts'
+import useGain from '@/composables/useGain.ts'
+import { setGain } from '@/store/gain.ts'
+import { loc } from '@/utils/chrome/i18n.ts'
 
 const { gain } = useGain()
 

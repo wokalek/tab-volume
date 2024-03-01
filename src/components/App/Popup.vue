@@ -21,10 +21,10 @@ import { onMounted, onBeforeUnmount } from 'vue'
 
 import { clamp, round } from 'lodash'
 
-import useGain from 'composables/useGain.ts'
-import useSettings from 'composables/useSettings.ts'
-import { view, ViewEnum } from 'store/view.ts'
-import { setGain } from 'store/gain.ts'
+import useGain from '@/composables/useGain.ts'
+import useSettings from '@/composables/useSettings.ts'
+import { view, ViewEnum } from '@/store/view.ts'
+import { setGain } from '@/store/gain.ts'
 
 const { settings } = useSettings()
 const { gain } = useGain()

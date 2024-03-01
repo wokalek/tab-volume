@@ -1,6 +1,6 @@
 import { ref, onBeforeMount } from 'vue'
 
-import { getGain, onChangeGain } from 'store/gain.ts'
+import { getGain, onChangeGain } from '@/store/gain.ts'
 
 export default function () {
   const gain = ref(1)

@@ -1,16 +1,16 @@
 import { clamp, isUndefined, round } from 'lodash'
 import { debounce } from 'perfect-debounce'
 
-import { CommandVolumeEnum } from 'enums/command.ts'
-import { getGain, setGain, onChangeGain, getGainRaw } from 'store/gain.ts'
-import { SettingsType, getSettings, onChangeSettings } from 'store/settings.ts'
-import { getStreamId, getStreamIdByTabId } from 'store/stream.ts'
-import { setBadge } from 'utils/badge.ts'
-import { setupOffscreenDocument } from 'utils/chrome/offscreen.ts'
-import { commandsOnCommand } from 'utils/chrome/commands.ts'
-import { tabsOnRemoved } from 'utils/chrome/tabs.ts'
-import { runtimeSendMessage } from 'utils/chrome/runtime.ts'
-import { loc } from 'utils/chrome/i18n.ts'
+import { CommandVolumeEnum } from '@/enums/command.ts'
+import { getGain, setGain, onChangeGain, getGainRaw } from '@/store/gain.ts'
+import { SettingsType, getSettings, onChangeSettings } from '@/store/settings.ts'
+import { getStreamId, getStreamIdByTabId } from '@/store/stream.ts'
+import { setBadge } from '@/utils/badge.ts'
+import { setupOffscreenDocument } from '@/utils/chrome/offscreen.ts'
+import { commandsOnCommand } from '@/utils/chrome/commands.ts'
+import { tabsOnRemoved } from '@/utils/chrome/tabs.ts'
+import { runtimeSendMessage } from '@/utils/chrome/runtime.ts'
+import { loc } from '@/utils/chrome/i18n.ts'
 
 const debounceChangeGain = debounce(changeGain, 0)
 

@@ -1,4 +1,4 @@
-import { processCurrentTab } from 'utils/chrome/tabs.ts'
+import { processCurrentTab } from '@/utils/chrome/tabs.ts'
 
 export function setBadgeBackgroundColor (color: string | browserAction.ColorArray) {
   return processCurrentTab((tabId) => {

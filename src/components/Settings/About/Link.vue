@@ -18,7 +18,7 @@
 </template>
 
 <script setup lang="ts">
-import { createTab } from 'utils/chrome/tabs.ts'
+import { createTab } from '@/utils/chrome/tabs.ts'
 
 defineProps<{
   href: string,

@@ -3,7 +3,7 @@ import { round } from 'lodash'
 // @ts-ignore
 import colors from 'tailwindcss/lib/public/colors'
 
-import { setBadgeText, setBadgeTextColor, setBadgeBackgroundColor } from 'utils/chrome/action.ts'
+import { setBadgeText, setBadgeTextColor, setBadgeBackgroundColor } from '@/utils/chrome/action.ts'
 
 export async function setBadge (gain: number | '') {
   const gainText = gain === '' ? '' : round(gain * 100).toString()

@@ -7,7 +7,7 @@
 <script setup lang="ts">
 import { round } from 'lodash'
 
-import useGain from 'composables/useGain.ts'
+import useGain from '@/composables/useGain.ts'
 
 const { gain } = useGain()
 </script>

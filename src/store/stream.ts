@@ -1,8 +1,8 @@
 import { isUndefined } from 'lodash'
 
-import { StorageNamespaceEnum } from 'enums/storage.ts'
-import { StorageAreaEnum, getStorageItem, setStorageItem } from 'utils/chrome/storage.ts'
-import { processCurrentTab } from 'utils/chrome/tabs.ts'
+import { StorageNamespaceEnum } from '@/enums/storage.ts'
+import { StorageAreaEnum, getStorageItem, setStorageItem } from '@/utils/chrome/storage.ts'
+import { processCurrentTab } from '@/utils/chrome/tabs.ts'
 
 export function getStreamIdByTabId (tabId: number) {
   return getStorageItem<string | undefined>(StorageAreaEnum.session, StorageNamespaceEnum.streamIdByTab, tabId)

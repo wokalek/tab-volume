@@ -9,11 +9,11 @@ import { computed } from 'vue'
 
 import { round } from 'lodash'
 
-import useGain from 'composables/useGain.ts'
-import useTailwind from 'composables/useTailwind.ts'
-import useSettings from 'composables/useSettings.ts'
-import { map } from 'utils/math.ts'
-import { setGain } from 'store/gain.ts'
+import useGain from '@/composables/useGain.ts'
+import useTailwind from '@/composables/useTailwind.ts'
+import useSettings from '@/composables/useSettings.ts'
+import { map } from '@/utils/math.ts'
+import { setGain } from '@/store/gain.ts'
 
 const { gain } = useGain()
 const { colors } = useTailwind()

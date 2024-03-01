@@ -22,14 +22,14 @@
 </template>
 
 <script setup lang="ts">
-import IconChrome from 'assets/icons/chrome.svg?component'
-import IconVolume from 'assets/icons/volume.svg?component'
-
 import { ref, computed, onBeforeMount } from 'vue'
 import { isUndefined, round, toNumber } from 'lodash'
 
-import { getAllTabs, setTabActive } from 'utils/chrome/tabs.ts'
-import { getAllTabsWithGain, onChangeGain } from 'store/gain.ts'
+import IconChrome from '@/assets/icons/chrome.svg?component'
+import IconVolume from '@/assets/icons/volume.svg?component'
+
+import { getAllTabs, setTabActive } from '@/utils/chrome/tabs.ts'
+import { getAllTabsWithGain, onChangeGain } from '@/store/gain.ts'
 
 const allTabs = ref<chrome.tabs.Tab[]>()
 const tabsWithGain = ref<{[k: number]: number}[] | undefined>()

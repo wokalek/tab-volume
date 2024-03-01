@@ -12,7 +12,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-import { loc } from 'utils/chrome/i18n.ts'
+import { loc } from '@/utils/chrome/i18n.ts'
 
 const isOpen = ref(false)
 </script>

@@ -1,6 +1,6 @@
 import { ref, onBeforeMount } from 'vue'
 
-import { getDefaultSettings, getSettings, onChangeSettings } from 'store/settings.ts'
+import { getDefaultSettings, getSettings, onChangeSettings } from '@/store/settings.ts'
 
 export default function () {
   const defaultSettings = getDefaultSettings()

@@ -24,10 +24,10 @@
 <script setup lang="ts">
 import { isEqual, round } from 'lodash'
 
-import useSettings from 'composables/useSettings.ts'
-import { setSettings } from 'store/settings.ts'
-import { getGain, setGain } from 'store/gain.ts'
-import { loc } from 'utils/chrome/i18n.ts'
+import useSettings from '@/composables/useSettings.ts'
+import { setSettings } from '@/store/settings.ts'
+import { getGain, setGain } from '@/store/gain.ts'
+import { loc } from '@/utils/chrome/i18n.ts'
 
 const { settings, defaultSettings } = useSettings()
 

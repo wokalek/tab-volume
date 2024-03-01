@@ -1,7 +1,7 @@
 import { clone } from 'lodash'
 
-import { StorageNamespaceEnum } from 'enums/storage.ts'
-import { getStorage, setStorage, StorageAreaEnum, storageOnChanged } from 'utils/chrome/storage.ts'
+import { StorageNamespaceEnum } from '@/enums/storage.ts'
+import { getStorage, setStorage, StorageAreaEnum, storageOnChanged } from '@/utils/chrome/storage.ts'
 
 export type SettingsType = {
   max: number,

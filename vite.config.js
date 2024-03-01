@@ -1,5 +1,7 @@
 import { defineConfig } from 'vite'
 
+import * as path from 'path'
+
 import vue from '@vitejs/plugin-vue'
 import svgLoader from 'vite-svg-loader'
 import components from 'unplugin-vue-components/vite'
@@ -28,16 +30,9 @@ export default defineConfig({
     },
   },
   resolve: {
-    alias: {
-      'enums': './src/enums',
-      'utils': './src/utils',
-      'store': './src/store',
-      'pages': './src/pages',
-      'assets': './src/assets',
-      'scripts': './src/scripts',
-      'components': './src/components',
-      'composables': './src/composables',
-    },
+    alias: [
+      { find: '@', replacement: path.resolve(__dirname, 'src') },
+    ],
   },
   css: {
     preprocessorOptions: {
