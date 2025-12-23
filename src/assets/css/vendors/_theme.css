@@ -1,0 +1,4 @@
+@theme {
+  --spacing: 4px;
+  --font-arial: Arial, var(--font-sans)
+}

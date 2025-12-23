@@ -1,0 +1,10 @@
+node_modules
+build
+dist
+dist-ssr
+*.local
+*.log
+*.tsbuildinfo
+components.d.ts
+auto-imports.d.ts
+.eslintrc-auto-import.json

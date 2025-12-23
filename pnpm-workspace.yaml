@@ -1,0 +1,4 @@
+onlyBuiltDependencies:
+  - '@tailwindcss/oxide'
+  - esbuild
+  - vite-plugin-vue-tailwind-auto-reference

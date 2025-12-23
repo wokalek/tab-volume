@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tab Volume</title>
+    <link rel="stylesheet" href="/src/assets/css/index.css" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module">
+      import AppPopup from '~/components/App/AppPopup.vue'
+
+      const app = createApp(AppPopup)
+
+      app.provide('chromeRuntimeId', chrome.runtime.id)
+      app.provide('currentTabId', await getCurrentTabId())
+
+      app.mount('#app')
+    </script>
+  </body>
+</html>
