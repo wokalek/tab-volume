@@ -48,7 +48,7 @@ function onInput() {
   sendMessage('serviceWorker', 'change', { tabId: currentTabId, volume: inputVolume.value })
 }
 
-watch(() => tabVolume.value ?? VOLUME_DEFAULT, storeVolume => inputValue.value = volumeToValue(storeVolume), { immediate: true })
+watch(() => tabVolume.value ?? VOLUME_DEFAULT, value => inputValue.value = volumeToValue(value), { immediate: true })
 </script>
 
 <style scoped>

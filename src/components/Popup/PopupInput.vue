@@ -1,5 +1,5 @@
 <template>
-  <div class="pl-3 pr-4 pt-5 flex justify-center">
+  <div class="pl-3 pr-4 pt-3 flex justify-center">
     <input
       ref="input"
       class="

@@ -12,6 +12,9 @@
   "manifest_commands_volume_down": {
     "message": "Decrease volume"
   },
+  "manifest_commands_toggle": {
+    "message": "Turning sound on/off in a tab"
+  },
   "background_offscreen_justification": {
     "message": "Capture the audio stream of a browser tab"
   },

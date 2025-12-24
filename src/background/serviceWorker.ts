@@ -17,6 +17,7 @@ async function actionChange({ tabId, volume }: MessageData['serviceWorker']['cha
 }
 
 async function actionToggle({ tabId }: MessageData['serviceWorker']['toggle']) {
+  setBedge(tabId, $mute.actions.get(tabId) ? $volume.actions.get(tabId) ?? '' : 'mute')
   await createOffscreenDocument()
   sendMessage('offscreen', 'toggle', {
     tabId,
@@ -31,6 +32,20 @@ async function actionStop({ tabId }: MessageData['serviceWorker']['stop']) {
   await createOffscreenDocument()
   sendMessage('offscreen', 'stop', { tabId })
 }
+
+listenCommand((command, tab) => {
+  if (!tab?.id) return
+
+  if ([CommandsEnum.volumeUp, CommandsEnum.volumeDown].includes(command as CommandsEnum)) {
+    const newVolume = valueToVolume(volumeToValue($volume.actions.get(tab.id) ?? VOLUME_DEFAULT) - (command === CommandsEnum.volumeDown ? 1 : -1))
+
+    if (+newVolume > +VOLUME_MAX || +newVolume < +VOLUME_MIN) return
+
+    actionChange({ tabId: tab.id, volume: newVolume })
+  }
+
+  if (command === CommandsEnum.toggle) actionToggle({ tabId: tab.id })
+})
 
 listenInstalled((details) => {
   if (details.reason !== chrome.runtime.OnInstalledReason.UPDATE) return
@@ -61,6 +76,7 @@ listenCaptureStatus((info) => {
 
 listenConnect(async (port) => {
   if (port.name !== 'popup') return
+
   const tabId = await getCurrentTabId()
 
   if (!tabId) return

@@ -10,4 +10,6 @@
 
 <script setup lang="ts">
 chrome.runtime.connect({ name: 'popup' })
+
+useWheelVolume()
 </script>

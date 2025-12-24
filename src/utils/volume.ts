@@ -1,5 +1,6 @@
+export const VOLUME_MIN = '0'
 export const VOLUME_DEFAULT = '100'
-export const VOLUME_MUTED = '0'
+export const VOLUME_MAX = '300'
 
 export const VOLUME_SCALE = {
   linearMax: 10, // до какого значения линейная шкала

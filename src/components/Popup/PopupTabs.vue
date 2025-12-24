@@ -15,10 +15,10 @@
           bg-slate-50 hover:bg-blue-50
         "
         type="button"
-        @click="focus(tab.id)"
+        @click="onClickTab(tab.id)"
       >
         <img v-show="loadedFavicons.has(tab.id)" class="size-5 shrink-0 mr-3" :src="tab.favIconUrl" :alt="tab.title" @load="onLoadFavicon(tab.id)">
-        <img v-show="!loadedFavicons.has(tab.id)" class="size-5 shrink-0 mr-3" src="/src/assets/images/image.svg" :alt="tab.title">
+        <img v-show="!loadedFavicons.has(tab.id)" class="size-5 shrink-0 mr-3 opacity-25" src="/src/assets/images/image.svg" :alt="tab.title">
         <span class="truncate">{{ tab.title }}</span>
       </button>
     </TransitionGroup>
@@ -30,7 +30,7 @@ const audibleTabs = useAtom($audibleTabs)
 
 const loadedFavicons = shallowReactive(new Set())
 
-function focus(tabId: TabId) {
+function onClickTab(tabId: TabId) {
   tabFocus(tabId)
 }
 

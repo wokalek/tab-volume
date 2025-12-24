@@ -36,6 +36,7 @@ export default defineConfig({
         'src/enums/**',
         'src/utils/**',
         'src/store/**',
+        'src/composables/**',
       ],
       eslintrc: { enabled: true },
     }),

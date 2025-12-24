@@ -24,4 +24,18 @@ export default defineManifest({
     type: 'module',
     service_worker: 'src/background/serviceWorker.ts',
   },
+  commands: {
+    volumeUp: {
+      description: '__MSG_manifest_commands_volume_up__',
+      suggested_key: { default: 'Shift+Alt+Up' },
+    },
+    volumeDown: {
+      description: '__MSG_manifest_commands_volume_down__',
+      suggested_key: { default: 'Shift+Alt+Down' },
+    },
+    toggle: {
+      description: '__MSG_manifest_commands_toggle__',
+      suggested_key: { default: 'Shift+Alt+M' },
+    },
+  },
 })

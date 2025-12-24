@@ -12,6 +12,9 @@
   "manifest_commands_volume_down": {
     "message": "Уменьшить громкость"
   },
+  "manifest_commands_toggle": {
+    "message": "Включение/выключение звука во вкладке"
+  },
   "background_offscreen_justification": {
     "message": "Захват аудиопотока вкладки браузера"
   },
