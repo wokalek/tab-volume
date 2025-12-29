@@ -21,11 +21,11 @@ export const $audibleTabs = xoid.atom(<Record<TabId, TabInfo>>{}, state => ({
   },
 }))
 
-$volume.subscribe($audibleTabs.actions.updateVolume)
-$mute.subscribe($audibleTabs.actions.updateMute)
-
 listenTabUpdated((_, changeInfo) => {
   if (['audible', 'favIconUrl', 'title'].some(prop => Object.hasOwn(changeInfo, prop))) $audibleTabs.actions.fetch()
 })
+
+$volume.subscribe($audibleTabs.actions.updateVolume)
+$mute.subscribe($audibleTabs.actions.updateMute)
 
 $audibleTabs.actions.fetch()

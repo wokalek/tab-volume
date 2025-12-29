@@ -8,7 +8,7 @@
         disabled:bg-gray-50 disabled:text-gray-300
       "
       type="button"
-      :disabled="!isCapturing"
+      :disabled="!mediaStream"
       @click="onClick"
     >
       <span>Восстановить</span>
@@ -19,7 +19,7 @@
 <script setup lang="ts">
 const currentTabId = inject('currentTabId') as number
 
-const isCapturing = useAtom($mediaStreamId.focus(state => state[currentTabId]))
+const mediaStream = useAtom($mediaStreamId.focus(currentTabId))
 
 function onClick() {
   sendMessage('serviceWorker', 'stop', { tabId: currentTabId })

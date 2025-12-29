@@ -1,13 +1,3 @@
-listenMessage((payload) => {
-  if (payload.target !== 'serviceWorker') return
-
-  switch (payload.action) {
-    case 'change': return actionChange(payload.data)
-    case 'toggle': return actionToggle(payload.data)
-    case 'stop': return actionStop(payload.data)
-  }
-})
-
 async function actionChange({ tabId, volume }: MessageData['serviceWorker']['change']) {
   $volume.actions.set(tabId, volume)
   $mute.actions.set(tabId, false)
@@ -33,13 +23,23 @@ async function actionStop({ tabId }: MessageData['serviceWorker']['stop']) {
   sendMessage('offscreen', 'stop', { tabId })
 }
 
+listenMessage((payload) => {
+  if (payload.target !== 'serviceWorker') return
+
+  switch (payload.action) {
+    case 'change': return actionChange(payload.data)
+    case 'toggle': return actionToggle(payload.data)
+    case 'stop': return actionStop(payload.data)
+  }
+})
+
 listenCommand((command, tab) => {
   if (!tab?.id) return
 
   if ([CommandsEnum.volumeUp, CommandsEnum.volumeDown].includes(command as CommandsEnum)) {
     const newVolume = valueToVolume(volumeToValue($volume.actions.get(tab.id) ?? VOLUME_DEFAULT) - (command === CommandsEnum.volumeDown ? 1 : -1))
 
-    if (+newVolume > +VOLUME_MAX || +newVolume < +VOLUME_MIN) return
+    if (+newVolume > $options.value.maxVolume || +newVolume < +VOLUME_MIN) return
 
     actionChange({ tabId: tab.id, volume: newVolume })
   }
@@ -47,8 +47,8 @@ listenCommand((command, tab) => {
   if (command === CommandsEnum.toggle) actionToggle({ tabId: tab.id })
 })
 
-listenInstalled((details) => {
-  if (details.reason !== chrome.runtime.OnInstalledReason.UPDATE) return
+listenInstalled(({ reason }) => {
+  if (reason !== chrome.runtime.OnInstalledReason.UPDATE) return
 
   $volume.actions.removeAll()
   $mute.actions.removeAll()
@@ -65,13 +65,28 @@ listenTabRemoved(async (tabId) => {
   sendMessage('offscreen', 'stop', { tabId })
 })
 
-listenCaptureStatus((info) => {
-  if (info.status !== chrome.tabCapture.TabCaptureState.STOPPED) return
+listenCaptureStatus(({ status, tabId }) => {
+  if (status !== chrome.tabCapture.TabCaptureState.STOPPED) return
+  if (!$mediaStreamId.actions.has(tabId)) return
 
-  setBedge(info.tabId, '')
-  $volume.actions.remove(info.tabId)
-  $mute.actions.remove(info.tabId)
-  $mediaStreamId.actions.remove(info.tabId)
+  setBedge(tabId, '')
+  $volume.actions.remove(tabId)
+  $mute.actions.remove(tabId)
+  $mediaStreamId.actions.remove(tabId)
+})
+
+listenNavigation(async ({ frameId, tabId }) => {
+  if (frameId !== 0) return
+  if (!$mediaStreamId.actions.has(tabId)) return
+
+  if (!$options.value.stopOnReload) {
+    setBedge(tabId, $volume.actions.get(tabId) ?? '')
+    return
+  }
+
+  setBedge(tabId, '')
+  await createOffscreenDocument()
+  sendMessage('offscreen', 'stop', { tabId })
 })
 
 listenConnect(async (port) => {
@@ -82,11 +97,22 @@ listenConnect(async (port) => {
   if (!tabId) return
 
   port.onDisconnect.addListener(async () => {
-    if ($volume.actions.get(tabId) === VOLUME_DEFAULT) {
-      setBedge(tabId, '')
-      await createOffscreenDocument()
-      sendMessage('offscreen', 'stop', { tabId })
-    }
+    if ($volume.actions.get(tabId) !== VOLUME_DEFAULT) return
+
+    setBedge(tabId, '')
+    await createOffscreenDocument()
+    sendMessage('offscreen', 'stop', { tabId })
+  })
+})
+
+listenStorageChanged((changes, areaName) => {
+  if (areaName !== 'sync' && !('options' in changes)) return
+
+  const options = changes.options?.newValue as Options | undefined
+  const maxVolume = options?.maxVolume ?? optionsDefaults.maxVolume
+
+  _.each($volume.value, (volume, tabId) => {
+    if (+volume > maxVolume) actionChange({ tabId: +tabId, volume: `${maxVolume}` })
   })
 })
 

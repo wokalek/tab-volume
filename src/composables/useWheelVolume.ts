@@ -1,14 +1,18 @@
 export default function () {
   const currentTabId = inject('currentTabId') as number
+  const options = useOptions()
 
   const tabVolume = useAtom($volume.focus(state => state[currentTabId]))
 
   function onWheel(event: WheelEvent) {
     event.preventDefault()
 
-    const newVolume = valueToVolume(volumeToValue(tabVolume.value ?? VOLUME_DEFAULT) - Math.sign(event.deltaY))
+    const volume = +(tabVolume.value ?? VOLUME_DEFAULT)
+    const sign = Math.sign(event.deltaY)
 
-    if (+newVolume > +VOLUME_MAX || +newVolume < +VOLUME_MIN) return
+    const newVolume = event.ctrlKey || volume < VOLUME_SCALE_MAX ? `${volume - sign}` : valueToVolume(volumeToValue(`${(sign > 0 ? _.ceil : _.floor)(volume, -1)}`) - sign)
+
+    if (+newVolume > options.value.maxVolume || +newVolume < +VOLUME_MIN) return
 
     sendMessage('serviceWorker', 'change', { tabId: currentTabId, volume: newVolume })
   }

@@ -35,11 +35,12 @@ const inputValue = defineModel<number>({ default: volumeToValue(VOLUME_DEFAULT) 
 
 const currentTabId = inject('currentTabId') as number
 
-const tabVolume = useAtom($volume.focus(state => state[currentTabId]))
-
 const inputVolume = computed(() => valueToVolume(inputValue.value))
 
-const rangeValueMax = computed(() => volumeToValue('300'))
+const tabVolume = useAtom($volume.focus(currentTabId))
+const options = useOptions()
+
+const rangeValueMax = computed(() => volumeToValue(`${options.value.maxVolume}`))
 const rangePercentage = computed(() => inputValue.value * 100 / rangeValueMax.value)
 const rangeTranslateX = computed(() => -_.round((100 - rangePercentage.value), 2))
 const rangeThumbCompensation = computed(() => _.round(0.5 - rangePercentage.value / 100, 2))

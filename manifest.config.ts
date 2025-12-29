@@ -11,10 +11,11 @@ export default defineManifest({
   default_locale: 'en',
   permissions: [
     'tabs',
+    'storage',
+    'offscreen',
     'activeTab',
     'tabCapture',
-    'offscreen',
-    'storage',
+    'webNavigation',
   ],
   icons: { 16: 'favicons/16.png', 32: 'favicons/32.png', 48: 'favicons/48.png', 128: 'favicons/128.png' },
   action: {
@@ -24,6 +25,7 @@ export default defineManifest({
     type: 'module',
     service_worker: 'src/background/serviceWorker.ts',
   },
+  options_page: 'src/pages/options.html',
   commands: {
     volumeUp: {
       description: '__MSG_manifest_commands_volume_up__',

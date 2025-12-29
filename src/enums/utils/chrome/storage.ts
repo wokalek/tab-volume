@@ -1,5 +1,5 @@
 export enum StorageNamespaceEnum {
-  settings = 'settings',
+  options = 'options',
   volume = 'volume',
   mute = 'mute',
   mediaStreamId = 'mediaStreamId',
