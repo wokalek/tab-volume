@@ -4,7 +4,7 @@
       class="
         relative py-3 px-5 pr-6 border rounded-xl
         bg-blue-50 border-blue-300
-        dark:bg-blue-950 dark:border-blue-900
+        dark:bg-blue-950/50 dark:border-blue-900
       "
     >
       <div
@@ -16,7 +16,7 @@
         "
         v-html="tip && tip.tip.content"
       />
-      <button class="absolute top-0.5 right-0.5 p-0.5 cursor-pointer rounded-full text-blue-900 hover:bg-blue-100 dark:text-blue-400 dark:hover:bg-blue-900/70" @click="onClickClose">
+      <button class="absolute top-0.5 right-0.5 p-0.5 cursor-pointer rounded-full text-blue-900 hover:bg-blue-100 dark:text-blue-400 dark:hover:bg-blue-900/50" @click="onClickClose">
         <SvgX class="size-5 flex justify-center items-center" />
       </button>
     </div>
