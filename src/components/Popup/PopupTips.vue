@@ -26,32 +26,36 @@
 <script setup lang="ts">
 import SvgX from '~/assets/images/x.svg?component'
 
+const props = defineProps<{ tip: { type: 'support', tip: Tip } | { type: 'tip', index: number, tip: Tip } }>()
+
 const options = useOptions()
 
 const isTemplate = shallowRef(true)
-const tip = useTip()
 
 function onClickClose(event: PointerEvent) {
   const nowTime = Date.now()
   const dayTime = 1000 * 60 * 60 * 24
+  const tomorrowTime = nowTime + dayTime
 
-  let tipsHideUntil, tipSupportHideUntil
+  let tipsHideUntil = options.value.tipsHideUntil
+  let tipSupportHideUntil = options.value.tipSupportHideUntil
 
-  if (tip && tip.type === 'tip') {
-    tipsHideUntil = options.value.tipsHideUntil ?? nowTime + dayTime * 7
-    tipSupportHideUntil = options.value.tipSupportHideUntil ?? nowTime + dayTime * 1
+  if (props.tip.type === 'tip') {
+    tipsHideUntil = nowTime + dayTime * 7
+    tipSupportHideUntil ??= tomorrowTime
   }
-  else if (tip && tip.type === 'support') {
-    tipsHideUntil = options.value.tipsHideUntil ?? nowTime + dayTime * 1
-    tipSupportHideUntil = options.value.tipSupportHideUntil ?? nowTime + dayTime * 30 * 2
+  else if (props.tip.type === 'support') {
+    tipsHideUntil ??= tomorrowTime
+    tipSupportHideUntil = nowTime + dayTime * 30 * 2
   }
 
-  $options.actions.set({ ...options.value, ...{
+  $options.actions.set({
+    ...options.value,
     ...(event.altKey ? { tipSupportHide: true } : {}),
-    ...(tip && tip.type === 'tip' ? { tipsLastShowedIndex: tip.index } : {}),
+    ...(props.tip.type === 'tip' ? { tipsLastShowedIndex: props.tip.index } : {}),
     tipsHideUntil,
     tipSupportHideUntil,
-  } })
+  })
 
   isTemplate.value = false
 }

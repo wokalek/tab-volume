@@ -23,7 +23,7 @@ export default function (): { type: 'support', tip: Tip } | { type: 'tip', index
   if (tipsHide === false && checkUntil(tipsHideUntil)) {
     const index = getRandomTipIndex()
 
-    return index ? { type: 'tip', index, tip: tips[index]! } : false
+    return index === undefined ? false : { type: 'tip', index, tip: tips[index]! }
   }
 
   if (tipSupportHide === false && checkUntil(tipSupportHideUntil)) return { type: 'support', tip: tipSupport }
