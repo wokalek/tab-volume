@@ -9,7 +9,7 @@
     >
       <div
         class="
-          text-pretty text-sm space-y-1 select-text [&_kbd]:px-1 [&_kbd]:rounded-[4px] [&_kbd]:border
+          text-pretty text-sm space-y-1 select-text [&_kbd]:px-1 [&_kbd]:rounded-sm [&_kbd]:border
           text-blue-900 dark:text-blue-300
           [&_kbd]:border-gray-400 [&_kbd]:bg-gray-200 [&_kbd]:text-slate-950
           [&_a]:text-blue-600 [&_a]:hover:text-blue-500 dark:[&_a]:text-blue-500 dark:[&_a]:hover:text-blue-400
@@ -32,11 +32,25 @@ const isTemplate = shallowRef(true)
 const tip = useTip()
 
 function onClickClose(event: PointerEvent) {
+  const nowTime = Date.now()
+  const dayTime = nowTime + 1000 * 60 * 60 * 24
+
+  let tipsHideUntil, tipSupportHideUntil
+
+  if (tip && tip.type === 'tip') {
+    tipsHideUntil = options.value.tipsHideUntil ?? nowTime + dayTime * 7
+    tipSupportHideUntil = options.value.tipSupportHideUntil ?? nowTime + dayTime * 1
+  }
+  else if (tip && tip.type === 'support') {
+    tipsHideUntil = options.value.tipsHideUntil ?? nowTime + dayTime * 1
+    tipSupportHideUntil = options.value.tipSupportHideUntil ?? nowTime + dayTime * 30 * 2
+  }
+
   $options.actions.set({ ...options.value, ...{
     ...(event.altKey ? { tipSupportHide: true } : {}),
     ...(tip && tip.type === 'tip' ? { tipsLastShowedIndex: tip.index } : {}),
-    tipsHideUntil: Date.now() + 1000 * 60 * 60 * 24 * (tip && tip.type === 'support' ? 1 : 7),
-    tipSupportHideUntil: Date.now() + 1000 * 60 * 60 * 24 * 30 * 2,
+    tipsHideUntil,
+    tipSupportHideUntil,
   } })
 
   isTemplate.value = false

@@ -10,6 +10,6 @@ export const $mute = xoid.atom(<Record<TabId, boolean>>{}, state => ({
   removeAll: () => removeStorage('session', 'mute'),
 }))
 
-listenStorageChanged((changes, areaName) => areaName === 'session' && 'mute' in changes && $mute.update(() => changes['mute'].newValue ?? {}))
+listenStorageChanged((changes, areaName) => areaName === 'session' && 'mute' in changes && $mute.update(() => changes['mute'].newValue as Record<TabId, boolean> ?? {}))
 
 ;(async () => $mute.value = await getStorage('session', 'mute') ?? {})()

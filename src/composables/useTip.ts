@@ -20,12 +20,13 @@ export default function (): { type: 'support', tip: Tip } | { type: 'tip', index
 
   const { tipsHide, tipsHideUntil, tipSupportHide, tipSupportHideUntil } = options.value
 
-  if (tipSupportHide === false && checkUntil(tipSupportHideUntil)) return { type: 'support', tip: tipSupport }
   if (tipsHide === false && checkUntil(tipsHideUntil)) {
     const index = getRandomTipIndex()
 
     return index ? { type: 'tip', index, tip: tips[index]! } : false
   }
+
+  if (tipSupportHide === false && checkUntil(tipSupportHideUntil)) return { type: 'support', tip: tipSupport }
 
   return false
 }

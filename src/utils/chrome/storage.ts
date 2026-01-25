@@ -1,7 +1,7 @@
 import type { PropertyPath } from 'lodash-es'
 
-export async function getStorage<T>(area: chrome.storage.AreaName, namespace: keyof typeof StorageNamespaceEnum): Promise<T | undefined> {
-  return (await chrome.storage[area].get(namespace))[namespace]
+export async function getStorage<T>(area: chrome.storage.AreaName, namespace: keyof typeof StorageNamespaceEnum) {
+  return (await chrome.storage[area].get(namespace))[namespace] as T | undefined
 }
 
 export function setStorage(area: chrome.storage.AreaName, namespace: keyof typeof StorageNamespaceEnum, value: unknown) {
@@ -27,5 +27,5 @@ export async function unsetStorageItem(area: chrome.storage.AreaName, namespace:
 }
 
 export function listenStorageChanged(...args: Parameters<StorageChangedEvent['addListener']>) {
-  chrome.storage.onChanged.addListener(...args as unknown as Parameters<chrome.storage.StorageChangedEvent['addListener']>)
+  chrome.storage.onChanged.addListener(...args as Parameters<typeof chrome.storage.onChanged.addListener>)
 }
