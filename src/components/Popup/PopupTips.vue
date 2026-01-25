@@ -33,7 +33,7 @@ const tip = useTip()
 
 function onClickClose(event: PointerEvent) {
   const nowTime = Date.now()
-  const dayTime = nowTime + 1000 * 60 * 60 * 24
+  const dayTime = 1000 * 60 * 60 * 24
 
   let tipsHideUntil, tipSupportHideUntil
 
