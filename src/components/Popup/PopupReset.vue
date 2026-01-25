@@ -2,7 +2,7 @@
   <section class="px-5 pt-6 pb-2">
     <button
       class="
-        w-full pt-4 pb-[18px] rounded-full not-disabled:cursor-pointer transition-colors
+        w-full pt-4 pb-4.5 rounded-full not-disabled:cursor-pointer transition-colors
         font-arial font-bold text-[14px] tracking-wide
 
         text-blue-400 bg-blue-50 hover:bg-blue-100
