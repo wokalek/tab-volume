@@ -4,5 +4,5 @@
 @import './_utility.css';
 
 body {
-  @apply dark:bg-slate-900 transition-colors;
+  @apply dark:bg-slate-900;
 }
