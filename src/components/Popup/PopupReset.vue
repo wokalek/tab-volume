@@ -1,11 +1,15 @@
 <template>
-  <div class="px-5 pt-6">
+  <section class="px-5 pt-6 pb-2">
     <button
       class="
         w-full pt-4 pb-[18px] rounded-full not-disabled:cursor-pointer transition-colors
         font-arial font-bold text-[14px] tracking-wide
-        bg-blue-50 text-blue-400 hover:bg-blue-100
+
+        text-blue-400 bg-blue-50 hover:bg-blue-100
         disabled:bg-gray-50 disabled:text-gray-300
+
+        dark:text-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600
+        dark:disabled:bg-gray-800 dark:disabled:text-gray-600
       "
       type="button"
       :disabled="!mediaStream"
@@ -13,7 +17,7 @@
     >
       <span>Восстановить</span>
     </button>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">

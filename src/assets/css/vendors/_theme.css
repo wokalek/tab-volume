@@ -1,4 +1,8 @@
 @theme {
   --spacing: 4px;
-  --font-arial: Arial, var(--font-sans)
+  --font-arial: Arial, var(--font-sans);
+
+  --color-accent: #DA0045;
 }
+
+@custom-variant dark (&:where(.dark, .dark *));

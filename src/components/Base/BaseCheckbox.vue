@@ -1,12 +1,21 @@
 <template>
-  <div class="inline-flex size-[30px] min-w-[30px] min-h-[30px] bg-blue-100 hover:bg-blue-200 rounded-[10px] items-center justify-center cursor-pointer select-none" @click="checkboxRef?.click()">
+  <div
+    class="
+      inline-flex size-[30px] min-w-[30px] min-h-[30px] rounded-[10px] items-center justify-center cursor-pointer select-none
+      bg-blue-100 hover:bg-blue-200 has-[input:hover]:bg-blue-200
+      dark:bg-gray-800 dark:hover:bg-gray-700 dark:has-[input:hover]:bg-gray-700
+    "
+    @click="checkboxRef?.click()"
+  >
     <input ref="checkbox" v-bind="ptInput" v-model="model" class="sr-only peer" type="checkbox">
-    <img class="w-[14px] h-auto invisible peer-checked:visible" src="/src/assets/images/checkmark.svg" alt="Лого">
+    <SvgCheckmark class="w-[14px] h-auto invisible peer-checked:visible text-blue-500 dark:text-slate-50" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { InputHTMLAttributes } from 'vue'
+import SvgCheckmark from '~/assets/images/checkmark.svg?component'
+
+import type { InputHTMLAttributes } from 'vue'
 
 const model = defineModel<boolean>()
 

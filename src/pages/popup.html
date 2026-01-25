@@ -11,9 +11,10 @@
     <script type="module">
       import AppPopup from '~/components/App/AppPopup.vue'
 
+      chrome.runtime.connect({ name: 'popup' })
+
       const app = createApp(AppPopup)
 
-      app.provide('chromeRuntimeId', chrome.runtime.id)
       app.provide('currentTabId', await getCurrentTabId())
 
       app.mount('#app')

@@ -18,6 +18,6 @@ export const $mediaStreamId = xoid.atom(<Record<TabId, string>>{}, state => ({
   },
 }))
 
-;(async () => $mediaStreamId.value = await getStorage('session', 'mediaStreamId') ?? {})()
+listenStorageChanged((changes, areaName) => areaName === 'session' && 'mediaStreamId' in changes && $mediaStreamId.update(() => changes['mediaStreamId'].newValue ?? {}))
 
-listenStorageChanged((changes, areaName) => areaName === 'session' && changes['mediaStreamId']?.newValue && $mediaStreamId.update(() => changes['mediaStreamId'].newValue))
+;(async () => $mediaStreamId.value = await getStorage('session', 'mediaStreamId') ?? {})()

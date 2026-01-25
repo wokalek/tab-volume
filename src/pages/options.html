@@ -13,7 +13,6 @@
 
       const app = createApp(AppOptions)
 
-      app.provide('chromeRuntimeId', chrome.runtime.id)
       app.provide('currentTabId', await getCurrentTabId())
 
       app.mount('#app')

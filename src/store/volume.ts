@@ -5,6 +5,6 @@ export const $volume = xoid.atom(<Record<TabId, string>>{}, state => ({
   removeAll: () => removeStorage('session', 'volume'),
 }))
 
-;(async () => $volume.value = await getStorage('session', 'volume') ?? {})()
+listenStorageChanged((changes, areaName) => areaName === 'session' && 'volume' in changes && $volume.update(() => changes['volume'].newValue ?? {}))
 
-listenStorageChanged((changes, areaName) => areaName === 'session' && changes['volume']?.newValue && $volume.update(() => changes['volume'].newValue))
+;(async () => $volume.value = await getStorage('session', 'volume') ?? {})()

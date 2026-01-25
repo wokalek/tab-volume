@@ -8,6 +8,7 @@
         w-20 number-input-no-spin rounded-md py-1 -my-1 outline-none
         text-center proportional-nums text-[32px] font-bold leading-0
         text-slate-950 hover:bg-gray-50 focus:bg-gray-100
+        dark:text-slate-50 dark:hover:bg-slate-800 dark:focus:bg-gray-800
       "
     @change="onChange"
     @keydown.enter="inputRef?.blur()"

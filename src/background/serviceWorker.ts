@@ -79,14 +79,15 @@ listenNavigation(async ({ frameId, tabId }) => {
   if (frameId !== 0) return
   if (!$mediaStreamId.actions.has(tabId)) return
 
-  if (!$options.value.stopOnReload) {
-    setBedge(tabId, $volume.actions.get(tabId) ?? '')
+  if ($options.value.stopOnReload) {
+    setBedge(tabId, '')
+    await createOffscreenDocument()
+    sendMessage('offscreen', 'stop', { tabId })
+
     return
   }
 
-  setBedge(tabId, '')
-  await createOffscreenDocument()
-  sendMessage('offscreen', 'stop', { tabId })
+  setBedge(tabId, $volume.actions.get(tabId) ?? '')
 })
 
 listenConnect(async (port) => {

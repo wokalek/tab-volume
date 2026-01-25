@@ -5,6 +5,7 @@ import { defineConfig } from 'vite'
 import { crx } from '@crxjs/vite-plugin'
 import vue from '@vitejs/plugin-vue'
 import zip from 'vite-plugin-zip-pack'
+import svgLoader from 'vite-svg-loader'
 import vueComponents from 'unplugin-vue-components/vite'
 import autoImport from 'unplugin-auto-import/vite'
 import tailwindAutoReference from 'vite-plugin-vue-tailwind-auto-reference'
@@ -23,6 +24,7 @@ export default defineConfig({
   plugins: [
     vue(),
     vueComponents(),
+    svgLoader({ defaultImport: 'url' }),
     autoImport({
       imports: [
         'vue',

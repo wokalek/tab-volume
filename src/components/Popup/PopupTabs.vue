@@ -1,5 +1,5 @@
 <template>
-  <div v-show="Object.keys(audibleTabs).length" class="px-3 mt-4 grid gap-1.5">
+  <section v-show="Object.keys(audibleTabs).length" class="px-3 mt-4 grid gap-1.5">
     <TransitionGroup
       enter-from-class="opacity-0"
       leave-to-class="opacity-0"
@@ -12,7 +12,8 @@
         class="
           flex items-center cursor-pointer pt-1.5 pl-2.5 pr-2 pb-1.5 rounded-lg overflow-hidden
           text-center text-sm tracking-wide
-          bg-slate-50 hover:bg-blue-50
+          text-slate-950 bg-slate-50 hover:bg-blue-50
+          dark:text-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700
         "
         type="button"
         @click="onClickTab(tab.id)"
@@ -22,7 +23,7 @@
         <span class="truncate">{{ tab.title }}</span>
       </button>
     </TransitionGroup>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">

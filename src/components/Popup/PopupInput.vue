@@ -1,7 +1,7 @@
 <template>
-  <div class="pl-3 pr-4 pt-3 flex justify-center">
+  <section class="pl-3 pr-4 pt-3 flex justify-center">
     <BaseInputNumber v-model="inputValue" :pt-input="{ min: volumeMin, max: options.maxVolume }" @change="onChange" />
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">

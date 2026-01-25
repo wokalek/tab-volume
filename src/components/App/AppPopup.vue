@@ -3,13 +3,17 @@
     <PopupHeader />
     <PopupInput />
     <PopupRange />
+    <PopupTips v-if="tip" />
     <PopupReset />
     <PopupTabs />
   </div>
 </template>
 
 <script setup lang="ts">
-chrome.runtime.connect({ name: 'popup' })
-
 useWheelVolume()
+
+const options = useOptions()
+const tip = useTip()
+
+watch(() => options.value.darkMode, value => window.document.body.classList.toggle('dark', value), { immediate: true })
 </script>

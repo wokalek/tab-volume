@@ -3,6 +3,10 @@
   "type": "module",
   "version": "2.0.0",
   "private": true,
+  "engines": {
+    "node": "22.20.0",
+    "pnpm": "10.17.1"
+  },
   "scripts": {
     "dev": "vite",
     "build": "pnpm lint && pnpm typecheck && vite build",
@@ -29,6 +33,7 @@
     "vite": "7.1.9",
     "vite-plugin-vue-tailwind-auto-reference": "1.0.2",
     "vite-plugin-zip-pack": "1.2.4",
+    "vite-svg-loader": "5.1.0",
     "vue": "3.5.22",
     "vue-tsc": "3.1.0",
     "xoid": "1.0.0-beta.12"

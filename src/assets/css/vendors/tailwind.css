@@ -2,3 +2,7 @@
 
 @import './_theme.css';
 @import './_utility.css';
+
+body {
+  @apply dark:bg-slate-900 transition-colors;
+}

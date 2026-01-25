@@ -25,8 +25,9 @@ export default defineConfig([
   {
     rules: {
       'require-await': 'error',
-      'vue/max-attributes-per-line': ['error', { singleline: { max: 5 }, multiline: { max: 1 } }],
       'no-restricted-syntax': ['error', { selector: 'TSEnumDeclaration[const=true]' }],
+      'vue/max-attributes-per-line': ['error', { singleline: { max: 5 }, multiline: { max: 1 } }],
+      'vue/no-v-html': 'off',
     },
   },
 ])

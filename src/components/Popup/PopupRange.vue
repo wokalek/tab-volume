@@ -1,18 +1,10 @@
 <template>
-  <div class="px-5 pt-5">
+  <section class="px-5 pt-5">
     <div class="relative">
       <div class="absolute overflow-hidden pointer-events-none top-1/2 -translate-y-1/2 w-full rounded-full">
+        <div class="absolute inset-0 bg-blue-300 dark:bg-blue-900" />
         <div
-          class="
-            absolute inset-0
-            bg-blue-300
-          "
-        />
-        <div
-          class="
-            w-full h-2 translate-0
-            bg-blue-600
-          "
+          class="w-full h-2 translate-0 bg-blue-600"
           :style="{ '--tw-translate-x': `calc(${rangeTranslateX}% + 24px * ${rangeThumbCompensation})` }"
         />
       </div>
@@ -27,7 +19,7 @@
         @input="onInput"
       >
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">
