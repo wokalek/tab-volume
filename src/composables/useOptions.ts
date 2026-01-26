@@ -1,9 +1,9 @@
 export default function () {
-  const options = useAtom($options)
+  const optionsRef = ref(_.cloneDeep($options.value))
 
-  const optionsRef = ref(_.cloneDeep(options.value))
-
-  watch(options, () => optionsRef.value = _.cloneDeep(options.value))
+  $options.subscribe((value) => {
+    optionsRef.value = _.cloneDeep(value)
+  })
 
   return optionsRef
 }
