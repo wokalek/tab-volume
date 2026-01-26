@@ -26,6 +26,8 @@ export default defineConfig({
     vueComponents(),
     svgLoader({ defaultImport: 'url' }),
     autoImport({
+      vueTemplate: true,
+      eslintrc: { enabled: true },
       imports: [
         'vue',
         { from: 'lodash-es', imports: [{ name: '*', as: '_' }], typeFrom: '@types/lodash-es' },
@@ -40,7 +42,6 @@ export default defineConfig({
         'src/store/**',
         'src/composables/**',
       ],
-      eslintrc: { enabled: true },
     }),
     tailwindAutoReference('./src/assets/css/vendors/tailwind.css') as unknown as import('vite').PluginOption,
     tailwindcss(),
@@ -59,9 +60,7 @@ export default defineConfig({
   },
   server: {
     cors: {
-      origin: [
-        /chrome-extension:\/\//,
-      ],
+      origin: [/chrome-extension:\/\//],
     },
   },
 })

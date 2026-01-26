@@ -9,11 +9,10 @@ export default function (): { type: 'support', tip: Tip } | { type: 'tip', index
     if (tips.length === 0) return undefined
     if (tips.length === 1) return 0
 
-    const lastIndex = options.value.tipsLastShowedIndex ?? -1
-    const randomIndex = Math.floor(Math.random() * (tips.length - 1))
-    const index = randomIndex >= lastIndex ? randomIndex + 1 : randomIndex
+    if (options.value.tipsLastShowedIndex === undefined) return Math.floor(Math.random() * tips.length)
 
-    return index
+    const randomIndex = Math.floor(Math.random() * (tips.length - 1))
+    return randomIndex >= options.value.tipsLastShowedIndex ? randomIndex + 1 : randomIndex
   }
 
   const options = useOptions()

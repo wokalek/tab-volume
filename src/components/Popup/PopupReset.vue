@@ -15,7 +15,7 @@
       :disabled="!mediaStream"
       @click="onClick"
     >
-      <span>Восстановить</span>
+      <span>{{ loc('popup_reset_button') }}</span>
     </button>
   </section>
 </template>

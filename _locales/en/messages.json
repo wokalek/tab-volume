@@ -1,10 +1,10 @@
 {
   "manifest_name": {
     "message": "Tab Volume",
-    "description": "Manifest name field [please leave as is, in English]"
+    "description": "[Leave the text in English]"
   },
   "manifest_description": {
-    "message": "Volume control within a browser tab"
+    "message": "Adjust the volume of the current browser tab"
   },
   "manifest_commands_volume_up": {
     "message": "Increase volume"
@@ -13,43 +13,60 @@
     "message": "Decrease volume"
   },
   "manifest_commands_toggle": {
-    "message": "Turning sound on/off in a tab"
+    "message": "Toggle tab mute"
   },
-  "background_offscreen_justification": {
-    "message": "Capture the audio stream of a browser tab"
+  "offscreen_justification": {
+    "message": "Capturing the audio stream of a browser tab"
   },
-  "app_title": {
-    "message": "Tab Volume",
-    "description": "Please leave as is, in English"
-  },
-  "app_reset_button": {
+  "popup_reset_button": {
     "message": "Reset"
   },
-  "app_settings_max_label": {
-    "message": "Maximum"
+  "popup_header_logo_link_title": {
+    "message": "Open the extension page in the Chrome Web Store"
   },
-  "app_settings_badge_toggle_label": {
-    "message": "Show volume on extension icon"
+  "popup_header_settings_link_title": {
+    "message": "Open settings"
   },
-  "app_settings_reset_button": {
-    "message": "Reset settings"
+  "options_logo_link_title": {
+    "message": "Leave a review for the extension"
   },
-  "app_settings_about_link": {
-    "message": "About extension"
+  "options_label_max_volume": {
+    "message": "Maximum volume"
   },
-  "app_settings_about_contribute_part_1": {
-    "message": "This extension is completely free and open source, the code is available on"
+  "options_label_dark_mode": {
+    "message": "Dark theme"
   },
-  "app_settings_about_contribute_part_2": {
-    "message": "If you'd like to contribute, feel free to do so."
+  "options_label_stop_on_reload": {
+    "message": "Restore volume changes when the tab is reloaded"
   },
-  "app_settings_about_email_to": {
-    "message": "You can email me at wokalek@wokalek.ru if you have any questions."
+  "options_label_tips_hide": {
+    "message": "Hide tips"
   },
-  "app_settings_about_support_part_1": {
-    "message": "If you want to thank me for this extension, you can do it through"
+  "options_footer_review": {
+    "message": "<a href=\"$EXTENSION_LINK$\" target=\"_blank\">Leave a review</a> for the extension",
+    "placeholders": {
+      "EXTENSION_LINK": { "content": "$1" }
+    }
   },
-  "app_settings_about_support_part_2": {
-    "message": "Thank you!"
+  "options_footer_support": {
+    "message": "Support the author on <a href=\"https://boosty.to/wokalek/donate\" target=\"_blank\">Boosty</a>"
+  },
+  "options_footer_github": {
+    "message": "Extension source code on <a href=\"http://github.com/wokalek/tab-volume\" target=\"_blank\">GitHub</a>"
+  },
+  "tip_support": {
+    "message": "<p>Thank you for using the extension!&nbsp;❤️</p><p>You can support the author on <a href=\"https://boosty.to/wokalek/donate\" target=\"_blank\">Boosty</a></p>"
+  },
+  "tips_1": {
+    "message": "<p><a href=\"$EXTENSION_LINK$\" target=\"_blank\">Share</a> your feedback about the extension</p>",
+    "placeholders": {
+      "EXTENSION_LINK": { "content": "$1" }
+    }
+  },
+  "tips_2": {
+    "message": "<p>Use the mouse wheel to quickly adjust the volume</p><p>Hold <kbd>Ctrl</kbd> to change the volume by 1%</p>"
+  },
+  "tips_3": {
+    "message": "<p>Enter <strong>chrome://extensions/shortcuts</strong> in the address bar and configure your keyboard shortcuts to control tab volume</p>"
   }
 }
