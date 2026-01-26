@@ -10,9 +10,9 @@ export const optionsDefaults: Options = {
 }
 
 export const $options = xoid.atom(optionsDefaults, () => ({
-  set: (options: Options) => setStorage('sync', 'options', options),
+  set: (options: Options) => setStorage('local', 'options', options),
 }))
 
-listenStorageChanged((changes, areaName) => areaName === 'sync' && 'options' in changes && $options.update(() => changes['options'].newValue as Options ?? optionsDefaults))
+listenStorageChanged((changes, areaName) => areaName === 'local' && 'options' in changes && $options.update(() => changes['options'].newValue as Options ?? optionsDefaults))
 
-;(async () => $options.value = await getStorage('sync', 'options') ?? optionsDefaults)()
+;(async () => $options.value = await getStorage('local', 'options') ?? optionsDefaults)()
