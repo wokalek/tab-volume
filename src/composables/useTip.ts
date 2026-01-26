@@ -18,15 +18,13 @@ export default function (): ComputedRef<{ type: 'support', tip: Tip } | { type: 
   const options = useOptions()
 
   return computed(() => {
-    const { tipsHide, tipsHideUntil, tipSupportHide, tipSupportHideUntil, tipsLastShowedIndex } = toRefs(options.value)
-
-    if (tipsHide.value === false && checkUntil(tipsHideUntil.value)) {
-      const index = getRandomTipIndex(tipsLastShowedIndex.value)
+    if (options.value.tipsHide === false && checkUntil(options.value.tipsHideUntil)) {
+      const index = getRandomTipIndex(options.value.tipsLastShowedIndex)
 
       return index === undefined ? false : { type: 'tip', index, tip: tips[index]! }
     }
 
-    if (tipSupportHide.value === false && checkUntil(tipSupportHideUntil.value)) return { type: 'support', tip: tipSupport }
+    if (options.value.tipSupportHide === false && checkUntil(options.value.tipSupportHideUntil)) return { type: 'support', tip: tipSupport }
 
     return false
   })
