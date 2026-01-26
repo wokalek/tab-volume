@@ -1,4 +1,1 @@
-concurrently \
-  -n typecheck,lint \
-  'pnpm:typecheck' \
-  'pnpm:lint'
+concurrently -n typecheck,lint 'pnpm:typecheck' 'pnpm:lint'
