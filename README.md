@@ -1,52 +1,29 @@
-# Vue 3 + Vite + CRXJS
+<p align="center">
+  <img src="./webstore/images/promo/marquee.png" />
+</p>
 
-This template helps you quickly start developing Chrome extensions with Vue 3, TypeScript and Vite. It includes the CRXJS Vite plugin for seamless Chrome extension development.
+# Tab Volume 🎚️
 
-## Features
+A convenient and attractive extension for adjusting sound volume in a browser tab
 
-- Vue 3 with `<script setup>` syntax
-- TypeScript support
-- Vite build tool
-- CRXJS Vite plugin integration
-- Chrome extension manifest configuration
+- 🍙 Increase or decrease volume within a browser tab
+- 🍥 Set any upper limit to scale the sound volume
+- 🍣 Displays a list of tabs where sound is playing, allowing you to easily switch between them
+- 🍤 Restore tab volume with one click
+- 🍢 Change volume with hotkeys `Shift + Alt + ArrowUp/ArrowDown`
 
-## Quick Start
+## Localization
 
-1. Install dependencies:
+If you want to add localizations to the extension, they are located in the [`_locales`](_locales) folder. Just create a folder with your locale and translate language phrases.
 
-```bash
-npm install
-```
+## Developers
 
-2. Start development server:
+If you are developing your own extension and are looking for code examples, I highly recommend checking out my [utils](./src/utils) from this repository, which I collected while developing Tab Volume. Some of them may require Lodash to work.
 
-```bash
-npm run dev
-```
+## Contribution
 
-3. Open Chrome and navigate to `chrome://extensions/`, enable "Developer mode", and load the unpacked extension from the `dist` directory.
+See [Contributing Guide](CONTRIBUTING.md).
 
-4. Build for production:
+## License
 
-```bash
-npm run build
-```
-
-## Project Structure
-
-- `src/popup/` - Extension popup UI
-- `src/content/` - Content scripts
-- `manifest.config.ts` - Chrome extension manifest configuration
-
-## Documentation
-
-- [Vue 3 Documentation](https://vuejs.org/)
-- [Vite Documentation](https://vitejs.dev/)
-- [CRXJS Documentation](https://crxjs.dev/vite-plugin)
-
-## Chrome Extension Development Notes
-
-- Use `manifest.config.ts` to configure your extension
-- The CRXJS plugin automatically handles manifest generation
-- Content scripts should be placed in `src/content/`
-- Popup UI should be placed in `src/popup/`
+[Creative Commons BY-NC 4.0](LICENSE.md).
